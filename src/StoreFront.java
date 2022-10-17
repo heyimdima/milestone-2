@@ -53,6 +53,7 @@ public class StoreFront {
                     shoppingCart.viewCart();
                     break;
                 case 3: // Clear Cart
+                    inventory.returnToInventory(shoppingCart.getCartItems());
                     shoppingCart.clearCart();
                     break;
                 case 4: // Checkout
@@ -66,7 +67,6 @@ public class StoreFront {
             }
         }
     }
-
 
     /**
      * function that displays all the products available for purchase
@@ -120,6 +120,7 @@ public class StoreFront {
 
         SalableProduct selectedItem = new SalableProduct(inventory.getProducts().get(input));
 
+        inventory.removeFromInventory(selectedItem);
         shoppingCart.addToCart(selectedItem);
     }
 

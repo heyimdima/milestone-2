@@ -15,6 +15,15 @@ public class ShoppingCart {
     }
 
     /**
+     * Returns an array of items that are currently in the cart
+     * @return selectedProducts
+     */
+    public ArrayList<SalableProduct> getCartItems() {
+        return selectedProducts;
+    }
+
+
+    /**
      * Function that display the current state of the cart,
      * if cart has items in it, it will show them
      * otherwise it will tell the user that the cart is empty
@@ -83,6 +92,7 @@ public class ShoppingCart {
         if (input == 1) {
             System.out.println("Thank you for your purchase in the total of " + getTotal() + "$");
             System.out.println("------------------");
+            clearCart();
             return selectedProducts; // Either return the shopping cart
         } else {
             System.out.println("Checkout was cancelled. Going back to the main menu..");

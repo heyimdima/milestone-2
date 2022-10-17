@@ -1,7 +1,7 @@
 /**
  * Health Class that comes from Salable Product, has SalableProduct properties + amount propery
  */
-public class Health extends SalableProduct {
+public class Health extends SalableProduct implements Comparable<SalableProduct>{
     private int amount;
 
     /**
@@ -16,5 +16,15 @@ public class Health extends SalableProduct {
     Health(String name, String description, double price, int quantity, int amount) {
         super(name, description, price, quantity);
         this.amount = amount;
+    }
+
+    /**
+     * Override the compare to function based on the name of the item and alphabetical ordering rules that ignore case
+     * @param o the object to be compared.
+     * @return comparison
+     */
+    @Override
+    public int compareTo(SalableProduct o) {
+        return this.getName().compareTo(o.getName());
     }
 }

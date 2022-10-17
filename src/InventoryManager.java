@@ -50,6 +50,31 @@ public class InventoryManager {
     }
 
     /**
+     * Function that removes one product from the inventory manager
+     * @param selectedItem
+     */
+    public void removeFromInventory(SalableProduct selectedItem) {
+        for (SalableProduct product: products) {
+            if (selectedItem.equals(product))
+                product.setQuantity(product.getQuantity() - selectedItem.getQuantity());
+        }
+    }
+
+    /**
+     * Function that return the quantity of items back from the shopping cart, when it is cleared
+     * @param selectedItems
+     */
+    public void returnToInventory(ArrayList<SalableProduct> selectedItems) {
+        for (SalableProduct selectedItem: selectedItems) {
+            for (SalableProduct inventoryItem: products) {
+                if (selectedItem.equals(inventoryItem)) {
+                    inventoryItem.setQuantity(inventoryItem.getQuantity() + selectedItem.getQuantity());
+                }
+            }
+        }
+    }
+
+    /**
      * Getter for the products that are currently in the stock / inventory
      * @return products
      */

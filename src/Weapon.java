@@ -1,7 +1,7 @@
 /**
  * Weapon Class that comes from Salable Product, has SalableProduct properties + damage property
  */
-public class Weapon extends SalableProduct {
+public class Weapon extends SalableProduct implements Comparable<SalableProduct> {
     private int damage;
 
     /**
@@ -16,5 +16,15 @@ public class Weapon extends SalableProduct {
     Weapon(String name, String description, double price, int quantity, int damage) {
         super(name, description, price, quantity);
         this.damage = damage;
+    }
+
+    /**
+     * Override the compare to function based on the name of the item and alphabetical ordering rules that ignore case
+     * @param o the object to be compared.
+     * @return comparison
+     */
+    @Override
+    public int compareTo(SalableProduct o) {
+        return this.getName().compareTo(o.getName());
     }
 }
