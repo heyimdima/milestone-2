@@ -5,6 +5,14 @@ public class Health extends SalableProduct implements Comparable<SalableProduct>
     private int amount;
 
     /**
+     * Default Constructor
+     */
+    Health() {
+        super();
+        this.amount = 0;
+    }
+
+    /**
      * Parameterized Constructor for the Armor class
      * Inherits properties from Salable Product and also adds a property of amount
      * @param name
@@ -15,6 +23,22 @@ public class Health extends SalableProduct implements Comparable<SalableProduct>
      */
     Health(String name, String description, double price, int quantity, int amount) {
         super(name, description, price, quantity);
+        this.amount = amount;
+    }
+
+    /**
+     * Getter for amount of health
+     * @return amount
+     */
+    public int getAmount() {
+        return amount;
+    }
+
+    /**
+     * Setter for the amount of health
+     * @param amount
+     */
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

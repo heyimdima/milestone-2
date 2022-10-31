@@ -5,6 +5,14 @@ public class Armor extends SalableProduct implements Comparable<SalableProduct>{
     private int defense;
 
     /**
+     * Default Constructor
+     */
+    Armor() {
+        super();
+        this.defense = 0;
+    }
+
+    /**
      * Parameterized Constructor for the Armor class
      * Inherits properties from Salable Product and also adds a property of defense
      * @param name
@@ -15,6 +23,14 @@ public class Armor extends SalableProduct implements Comparable<SalableProduct>{
      */
     Armor(String name, String description, double price, int quantity, int defense) {
         super(name, description, price, quantity);
+        this.defense = defense;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 

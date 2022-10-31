@@ -1,8 +1,18 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Weapon Class that comes from Salable Product, has SalableProduct properties + damage property
  */
 public class Weapon extends SalableProduct implements Comparable<SalableProduct> {
     private int damage;
+
+    /**
+     * Default Constructor
+     */
+    Weapon() {
+        super();
+        this.damage = 0;
+    }
 
     /**
      * Parameterized Constructor for the Weapon class
@@ -15,6 +25,22 @@ public class Weapon extends SalableProduct implements Comparable<SalableProduct>
      */
     Weapon(String name, String description, double price, int quantity, int damage) {
         super(name, description, price, quantity);
+        this.damage = damage;
+    }
+
+    /**
+     * Getter for Damage
+     * @return damage
+     */
+    public int getDamage() {
+        return damage;
+    }
+
+    /**
+     * Setter for Damage
+     * @param damage
+     */
+    public void setDamage(int damage) {
         this.damage = damage;
     }
 

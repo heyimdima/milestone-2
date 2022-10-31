@@ -7,6 +7,14 @@ public class SalableProduct {
     private double price;
     private int quantity;
 
+    SalableProduct() {
+        super();
+        this.name = "";
+        this.description = "";
+        this.price = 0;
+        this.quantity = 0;
+    }
+
     /**
      * Parameterized Constructor for the Salable Product Class
      *
@@ -16,6 +24,7 @@ public class SalableProduct {
      * @param quantity    quantity of the product
      */
     SalableProduct(String name, String description, double price, int quantity) {
+        super();
         this.name = name;
         this.description = description;
         this.price = price;

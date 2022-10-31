@@ -1,0 +1,8 @@
+{"name":"Sunglasses","description":"Helps to deal with bright light.","price":12.65,"quantity":10}
+{"name":"Pencil","description":"You can draw things with it.","price":1.25,"quantity":15}
+{"name":"Headphones","description":"Allows you to listen to music.","price":15.75,"quantity":5}
+{"name":"Katana","description":"Slices an enemy in the half.","price":25.55,"quantity":3,"damage":25}
+{"name":"Gun","description":"Nobody is bulletproof.","price":45.3,"quantity":5,"damage":55}
+{"name":"Wooden Armor","description":"Armor that is made out of wood.","price":15.43,"quantity":15,"defense":15}
+{"name":"Iron Armor","description":"Armor that is made out of iron.","price":26.64,"quantity":10,"defense":35}
+{"name":"Health","description":"Fills up your health by 25 point.","price":20.0,"quantity":50,"amount":25}
