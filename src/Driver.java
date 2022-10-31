@@ -1,7 +1,3 @@
-import javax.swing.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 /**
  * Driver for the Store Front Application by Dmytro Bondar
  * This method initializes the Store Front which kicks off the main loop of the app location.

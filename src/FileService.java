@@ -68,9 +68,6 @@ public class FileService {
                     SalableProduct product = objectMapper.readValue(json, SalableProduct.class);
                     products.add(product);
                 }
-
-
-
             }
 
             s.close();
