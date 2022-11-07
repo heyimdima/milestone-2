@@ -49,25 +49,8 @@ public class FileService {
                 boolean isBaseClass = true;
                 ObjectMapper objectMapper = new ObjectMapper();
                 String json = s.nextLine();
-                if (json.contains("damage")) {
-                    Weapon product = objectMapper.readValue(json, Weapon.class);
-                    products.add(product);
-                    isBaseClass = false;
-                }
-                if (json.contains("defense")) {
-                    Armor product = objectMapper.readValue(json, Armor.class);
-                    products.add(product);
-                    isBaseClass = false;
-                }
-                if (json.contains("amount")) {
-                    Health product = objectMapper.readValue(json, Health.class);
-                    products.add(product);
-                    isBaseClass = false;
-                }
-                if (isBaseClass) {
                     SalableProduct product = objectMapper.readValue(json, SalableProduct.class);
                     products.add(product);
-                }
             }
 
             s.close();
