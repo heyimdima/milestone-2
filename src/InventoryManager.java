@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Class that manages the inventory, kind of like the backend of the store
@@ -9,12 +10,21 @@ public class InventoryManager {
 
     /**
      * Default Constructor for the Inventory Manager class that initializes ArrayList of the products the initial state of the stock items
+     * Also sorts the ArrayList by name first, price second in descending order
      */
     public InventoryManager() {
         // Initialize a File Service
         fileService = new FileService();
         // initialize the inventory from the JSON File
         products = fileService.readFromFile("inventory.json");
+
+        Collections.sort(products, ((o1, o2) -> {
+            int rc = o1.getName().compareTo(o2.getName());
+            if (rc == 0) {
+                rc = Double.compare(o1.getPrice(), o2.getPrice());
+            }
+            return rc; // you can return -rc to get the ascending order
+        }));
     }
 
     /**
