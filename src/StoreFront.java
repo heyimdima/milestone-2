@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ public class StoreFront {
      * Default Constructor for the Store Front Class
      * Initializes the available products and calls the main menu function that starts the main loop of the app
      */
-    StoreFront() {
+    StoreFront() throws IOException {
         inventory = new InventoryManager();
         shoppingCart = new ShoppingCart();
         greetingMessage();

@@ -5,7 +5,8 @@ import java.util.Collections;
  * Class that manages the inventory, kind of like the backend of the store
  */
 public class InventoryManager {
-    FileService fileService;
+    private FileService fileService;
+    private InventoryAdminThread serverThread;
     private ArrayList<SalableProduct> products;
 
     /**
@@ -25,6 +26,10 @@ public class InventoryManager {
             }
             return rc; // you can return -rc to get the ascending order
         }));
+
+        InventoryAdminThread inventoryAdminThread = new InventoryAdminThread(products);
+        inventoryAdminThread.start();
+
     }
 
     /**
