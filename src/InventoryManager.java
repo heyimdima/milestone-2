@@ -27,8 +27,8 @@ public class InventoryManager {
             return rc; // you can return -rc to get the ascending order
         }));
 
-        InventoryAdminThread inventoryAdminThread = new InventoryAdminThread(products);
-        inventoryAdminThread.start();
+        serverThread = new InventoryAdminThread(products);
+        serverThread.start();
 
     }
 
