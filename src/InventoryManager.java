@@ -19,7 +19,7 @@ public class InventoryManager {
         // initialize the inventory from the JSON File
         products = fileService.readFromFile("inventory.json");
 
-        Collections.sort(products, ((o1, o2) -> {
+        products.sort(((o1, o2) -> {
             int rc = o1.getName().compareTo(o2.getName());
             if (rc == 0) {
                 rc = Double.compare(o1.getPrice(), o2.getPrice());
